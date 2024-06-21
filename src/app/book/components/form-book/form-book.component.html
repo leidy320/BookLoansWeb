@@ -1,0 +1,32 @@
+<h1>{{ isEditMode ? 'Actualizar Libro' : 'Crear Libro' }}</h1>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre Autor</mat-label>
+    <input matInput formControlName="nameAuthor" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input matInput formControlName="birthDate" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Lugar de nacimiento</mat-label>
+    <textarea matInput formControlName="placeBirth" required></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre del libro</mat-label>
+    <textarea matInput formControlName="nameBook" required></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Fecha de publicacion</mat-label>
+    <textarea matInput formControlName="publicationDate" required></textarea>
+  </mat-form-field>
+
+
+  <div>
+    <button mat-raised-button type="submit" [disabled]="formulario.invalid">{{ isEditMode ? 'Actualizar' : 'Enviar' }}</button>
+  </div>
+</form>

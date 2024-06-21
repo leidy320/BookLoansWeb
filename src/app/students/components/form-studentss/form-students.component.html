@@ -1,0 +1,21 @@
+<h1>{{ isEditMode ? 'Actualizar Estudiante' : 'Crear Estudiante' }}</h1>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre Estudiante</mat-label>
+    <input matInput formControlName="nameStudent" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Documento de identidad</mat-label>
+    <input matInput formControlName="identificationDocument" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Programa</mat-label>
+    <textarea matInput formControlName="program" required></textarea>
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button type="submit" [disabled]="formulario.invalid">{{ isEditMode ? 'Actualizar' : 'Enviar' }}</button>
+  </div>
+</form>
